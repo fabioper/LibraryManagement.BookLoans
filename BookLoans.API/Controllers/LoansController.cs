@@ -1,5 +1,4 @@
-﻿using System;
-using BookLoans.API.Models;
+﻿using BookLoans.API.Models;
 using BookLoans.API.Services.Contracts;
 using BookLoans.API.Services.Exceptions;
 using Microsoft.AspNetCore.Mvc;

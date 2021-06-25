@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace BookLoans.API
@@ -32,6 +33,8 @@ namespace BookLoans.API
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "BookLoans.API", Version = "v1"});
             });
 
+            services.AddLogging(builder => builder.AddSeq(Configuration.GetSection("Seq")));
+            
             services.AddDbContext<BookLoansContext>();
 
             services.AddScoped<ILoansService, LoansService>();
