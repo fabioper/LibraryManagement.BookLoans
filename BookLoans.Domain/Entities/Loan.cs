@@ -7,5 +7,15 @@
         public int BookId { get; set; }
 
         public virtual Book Book { get; set; }
+
+        public Loan(string user, Book book)
+        {
+            User = user;
+            Book = book;
+        }
+
+        public Loan() // EF required
+        {
+        }
     }
 }
