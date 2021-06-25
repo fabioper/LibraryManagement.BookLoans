@@ -8,5 +8,6 @@ namespace BookLoans.API.Services.Contracts
     {
         IEnumerable<Loan> GetAll();
         void LoanBook(LoanBookRequest request);
+        void ReturnBook(int loanId);
     }
 }

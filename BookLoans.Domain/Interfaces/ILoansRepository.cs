@@ -9,5 +9,6 @@ namespace BookLoans.Domain.Interfaces
         void Add(Loan loan);
         void Remove(Loan loan);
         void SaveChanges();
+        Loan GetById(int loanId);
     }
 }

@@ -1,13 +1,17 @@
+using BookLoans.API.Consumers;
 using BookLoans.API.Services;
 using BookLoans.API.Services.Contracts;
 using BookLoans.Domain.Interfaces;
 using BookLoans.Infra.Data;
+using BookLoans.Infra.Messaging;
+using BookLoans.Infra.Messaging.Contracts;
 using BookLoans.Infra.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace BookLoans.API
@@ -30,11 +34,17 @@ namespace BookLoans.API
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "BookLoans.API", Version = "v1"});
             });
 
+            services.AddLogging(builder => builder.AddSeq(Configuration.GetSection("Seq")));
+            
             services.AddDbContext<BookLoansContext>();
 
             services.AddScoped<ILoansService, LoansService>();
             services.AddScoped<ILoansRepository, LoansRepository>();
             services.AddScoped<IBooksRepository, BooksRepository>();
+
+            services.AddScoped<IServiceBus, ServiceBus>();
+
+            services.AddHostedService<BookCreatedConsumer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

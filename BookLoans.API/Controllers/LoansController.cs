@@ -37,5 +37,12 @@ namespace BookLoans.API.Controllers
                 return NotFound(e.Message);
             }
         }
+
+        [HttpDelete("{loanId:int}")]
+        public IActionResult ReturnBook([FromRoute] int loanId)
+        {
+            _loansService.ReturnBook(loanId);
+            return Ok();
+        }
     }
 }
