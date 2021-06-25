@@ -37,7 +37,7 @@ namespace BookLoans.API.Services
             var book = _booksRepository.GetById(request.BookId);
             if (book is null)
             {
-                _logger.LogWarning($"Loan with ID {request.BookId} not found");
+                _logger.LogWarning($"Book with ID {request.BookId} not found");
                 throw new BookNotFoundException();
             }
 
