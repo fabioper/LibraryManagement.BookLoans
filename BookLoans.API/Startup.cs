@@ -1,3 +1,4 @@
+using BookLoans.API.Consumers;
 using BookLoans.API.Services;
 using BookLoans.API.Services.Contracts;
 using BookLoans.Domain.Interfaces;
@@ -42,6 +43,8 @@ namespace BookLoans.API
             services.AddScoped<IBooksRepository, BooksRepository>();
 
             services.AddScoped<IServiceBus, ServiceBus>();
+
+            services.AddHostedService<BookCreatedConsumer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
