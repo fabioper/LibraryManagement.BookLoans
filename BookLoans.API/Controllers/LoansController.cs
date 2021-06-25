@@ -38,8 +38,8 @@ namespace BookLoans.API.Controllers
             }
         }
 
-        [HttpDelete]
-        public IActionResult ReturnBook([FromBody] int loanId)
+        [HttpDelete("{loanId:int}")]
+        public IActionResult ReturnBook([FromRoute] int loanId)
         {
             _loansService.ReturnBook(loanId);
             return Ok();
