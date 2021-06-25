@@ -8,5 +8,6 @@ namespace BookLoans.Domain.Interfaces
         IEnumerable<Loan> GetAll();
         void Add(Loan loan);
         void Remove(Loan loan);
+        void SaveChanges();
     }
 }

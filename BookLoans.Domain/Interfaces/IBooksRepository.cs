@@ -7,5 +7,6 @@ namespace BookLoans.Domain.Interfaces
     {
         IEnumerable<Book> Add(Book book);
         Book GetById(int bookId);
+        void SaveChanges();
     }
 }
