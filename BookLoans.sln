@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLoans.Domain", "BookLoa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLoans.Infra", "BookLoans.Infra\BookLoans.Infra.csproj", "{D44D8D22-EDE6-41CE-9EFB-14FD366DAB40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLoans.API", "BookLoans.API\BookLoans.API.csproj", "{68EA3E39-9283-4BB8-9EAB-0EDC2E252C6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{D44D8D22-EDE6-41CE-9EFB-14FD366DAB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D44D8D22-EDE6-41CE-9EFB-14FD366DAB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D44D8D22-EDE6-41CE-9EFB-14FD366DAB40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EA3E39-9283-4BB8-9EAB-0EDC2E252C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EA3E39-9283-4BB8-9EAB-0EDC2E252C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EA3E39-9283-4BB8-9EAB-0EDC2E252C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EA3E39-9283-4BB8-9EAB-0EDC2E252C6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
