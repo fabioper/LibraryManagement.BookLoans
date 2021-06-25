@@ -18,7 +18,7 @@ namespace BookLoans.Infra.Repositories
             _books = _context.Books;
         }
         
-        public IEnumerable<Book> Add(Book book) => _books.AsNoTracking().ToList();
+        public void Add(Book book) => _books.Add(book);
 
         public Book GetById(int bookId) => _books.Find(bookId);
 

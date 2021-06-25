@@ -5,7 +5,7 @@ namespace BookLoans.Domain.Interfaces
 {
     public interface IBooksRepository
     {
-        IEnumerable<Book> Add(Book book);
+        void Add(Book book);
         Book GetById(int bookId);
         void SaveChanges();
     }
