@@ -49,5 +49,23 @@ namespace BookLoans.API.Services
             
             _logger.LogInformation($"Book {loan.BookId} was lent to {loan.User}");
         }
+
+        public void ReturnBook(int loanId)
+        {
+            _logger.LogInformation($"Returning loan with ID: {loanId}");
+
+            var loan = _loansRepository.GetById(loanId);
+            if (loan is null)
+            {
+                _logger.LogWarning($"Loan with ID {loanId} not found");
+                throw new LoanNotFoundException();
+            }
+            
+            _loansRepository.Remove(loan);
+            _loansRepository.SaveChanges();
+
+            _serviceBus.Publish(new BookReturned(loan.BookId));
+            _logger.LogInformation($"Book {loan.BookId} was returned by {loan.User}");
+        }
     }
 }

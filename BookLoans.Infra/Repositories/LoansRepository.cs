@@ -25,5 +25,6 @@ namespace BookLoans.Infra.Repositories
         public void Remove(Loan loan) => _loans.Remove(loan);
 
         public void SaveChanges() => _context.SaveChanges();
+        public Loan GetById(int loanId) => _loans.Find(loanId);
     }
 }

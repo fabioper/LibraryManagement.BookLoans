@@ -1,4 +1,5 @@
-﻿using BookLoans.API.Models;
+﻿using System;
+using BookLoans.API.Models;
 using BookLoans.API.Services.Contracts;
 using BookLoans.API.Services.Exceptions;
 using Microsoft.AspNetCore.Mvc;
@@ -35,6 +36,13 @@ namespace BookLoans.API.Controllers
             {
                 return NotFound(e.Message);
             }
+        }
+
+        [HttpDelete]
+        public IActionResult ReturnBook([FromBody] int loanId)
+        {
+            _loansService.ReturnBook(loanId);
+            return Ok();
         }
     }
 }
